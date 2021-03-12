@@ -1,21 +1,3 @@
-# Asuswrt-Merlin
-
-## DDNS
-
-https://github.com/RMerl/asuswrt-merlin.ng/wiki/Custom-DDNS
-
-### 新建`ddns-start`脚本
-
-```shell
-vi /jffs/scripts/ddns-start
-chmod +x /jffs/scripts/ddns-start
-```
-
-### 编辑`ddns-start`脚本
-
-- aliddns
-
-```shell
 #!/bin/sh
 
 ACCESS_KEY_ID=""
@@ -80,11 +62,3 @@ if update_dns_record $DOMAIN_NAME $WAN_IP | grep -q "RecordId"; then
 else
     /sbin/ddns_custom_updated 0
 fi
-```
-
-### 在WebUI应用DDNS
-
-- 外部网络(WAN) - DDNS
-    - Method to retrieve WAN IP: Internal
-    - 服务器: "Custom"
-    - 主机名称: "域名"
